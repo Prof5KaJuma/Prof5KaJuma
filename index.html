@@ -3,23 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>I'm Juma</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #f4f4f9;
-        }
-        h1 {
-            color: #333;
-        }
-    </style>
+    <title>Welcome to Our Website</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
 </head>
 <body>
-    <h1>I'm Juma</h1>
+    <!-- Full-screen Welcome Section -->
+    <section class="welcome-section">
+        <div class="overlay"></div>
+        <div class="welcome-container">
+            <h1 class="welcome-heading">Welcome to <span id="company-name">Our Website</span></h1>
+            <p class="welcome-subtitle">We are delighted to have you here!</p>
+            <div class="welcome-button">
+                <a href="#services" class="explore-button">Explore Now</a>
+            </div>
+            <div class="slogan-container">
+                <span class="slogan">Innovate.</span>
+                <span class="slogan">Inspire.</span>
+                <span class="slogan">Excel.</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- JavaScript to Rotate Slogans -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const slogans = document.querySelectorAll(".slogan");
+            let current = 0;
+            setInterval(() => {
+                slogans.forEach((slogan, index) => {
+                    slogan.style.opacity = index === current ? "1" : "0";
+                });
+                current = (current + 1) % slogans.length;
+            }, 2000);
+        });
+    </script>
+
+    <!-- JavaScript to Animate the Welcome Text -->
+    <script>
+        gsap.from(".welcome-heading", {duration: 1.5, y: -50, opacity: 0, ease: "bounce"});
+        gsap.from(".welcome-subtitle", {duration: 1.5, delay: 0.5, opacity: 0, y: 50, ease: "power2.out"});
+        gsap.from(".explore-button", {duration: 1.5, delay: 1, opacity: 0, scale: 0.5, ease: "power2.out"});
+    </script>
 </body>
 </html>
