@@ -1,0 +1,89 @@
+/* Import this stylesheet to style the HTML content above */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #121212;
+    color: #ffffff;
+    overflow: hidden;
+}
+
+.welcome-section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: url('https://source.unsplash.com/1600x900/?technology,modern') no-repeat center center/cover;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+}
+
+.welcome-container {
+    z-index: 2;
+    max-width: 80%;
+}
+
+.welcome-heading {
+    font-size: 3rem;
+    color: #fff;
+    margin-bottom: 1rem;
+}
+
+#welcome-container #company-name {
+    color: #ffae00;
+}
+
+.welcome-subtitle {
+    font-size: 1.5rem;
+    color: #cfcfcf;
+    margin-bottom: 1.5rem;
+}
+
+.explore-button {
+    text-decoration: none;
+    color: #fff;
+    background-color: #ffae00;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.explore-button:hover {
+    background-color: #ff7500;
+}
+
+.slogan-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.slogan {
+    font-size: 1.2rem;
+    color: #ffae00;
+    font-weight: 600;
+    opacity: 0;
+    position: absolute;
+    transition: opacity 0.5s ease-in-out;
+}
